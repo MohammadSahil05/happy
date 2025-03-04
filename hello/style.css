@@ -1,0 +1,51 @@
+.love-note-button {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #ff6699;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s;
+    margin-top: 20px;
+}
+
+.love-note-button:hover {
+    background: #ff3366;
+}
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    border-radius: 15px;
+    border: 5px solid #b22222;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+h1 {
+    font-size: 42px;
+    color: #b22222;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+.container {
+    padding: 40px;
+}
+
+h1, h2 {
+    margin-bottom: 15px;
+}
+
+.love-note-button {
+    margin-top: 30px;
+    padding: 12px 25px;
+    font-size: 18px;
+    display: inline-block;
+}
