@@ -3,20 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Love Note ❤️</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Love Note for My Jaan ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ffe6e6;
+            text-align: center;
+            font-family: 'Dancing Script', cursive;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .envelope {
+            width: 250px;
+            height: 200px;
+            background-color: #ff4d4d;
+            position: relative;
+            display: inline-block;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .letter {
+            width: 220px;
+            height: 160px;
+            background-color: white;
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            border-radius: 5px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            font-size: 18px;
+            font-family: 'Great Vibes', cursive;
+            transform: translateY(100%);
+            transition: transform 0.8s ease-in-out;
+        }
+        .envelope:hover .letter {
+            transform: translateY(0);
+        }
+        .download-btn {
+            margin-top: 20px;
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
+    <audio autoplay loop>
+        <source src="love-music.mp3" type="audio/mpeg">
+    </audio>
     <div class="container">
-        <h1>💖 To My Love 💖</h1>
-        <p class="message">
-            Every moment with you is magical. Through ups and downs, our love has only grown stronger.  
-            You are my happiness, my heart, my everything. I love you forever. ❤️  
-        </p>
-        
-        <p class="signature">Yours forever, Sahil 💕</p>
-
-        <a href="../main.html" class="back-button">← Back to Home</a>
+        <h1>My Love Note for You ❤️</h1>
+        <div class="envelope">
+            <div class="letter" id="loveMessage">My Jaan, You are the best thing in my life. Love you forever! ❤️</div>
+        </div>
+        <br>
+        <button class="download-btn" onclick="downloadLoveNote()">Download Love Note</button>
     </div>
+    <script>
+        function downloadLoveNote() {
+            let text = document.getElementById("loveMessage").innerText;
+            let blob = new Blob([text], { type: "text/plain" });
+            let link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = "Love_Note.txt";
+            link.click();
+        }
+    </script>
 </body>
 </html>

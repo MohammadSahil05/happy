@@ -5,25 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Memories</title>
     <link rel="stylesheet" href="style.css">
+    <script src="../js/gallery.js" defer></script> <!-- ✅ Added defer -->
 </head>
 <body>
     <div class="container">
         <h1>Our Beautiful Moments</h1>
         <div class="gallery">
-            <img src="images/img1.jpg" alt="Memory 1">
-            <img src="images/img2.jpg" alt="Memory 2">
-            <img src="images/img3.jpg" alt="Memory 3">
-            <img src="images/img4.jpg" alt="Memory 4">
-            <img src="images/img5.jpg" alt="Memory 5">
-            <img src="images/img6.jpg" alt="Memory 6">
-            <img src="images/img7.jpg" alt="Memory 7">
-            <img src="images/img8.jpg" alt="Memory 8">
-            <img src="images/img9.jpg" alt="Memory 9">
-            <img src="images/img10.jpg" alt="Memory 10">
+            <div class="image-container">
+                <img src="../image/image1.jpg" alt="Memory 1">
+                <div class="hidden-message">Forever Together ❤️</div>
+            </div>
+            <div class="image-container">
+                <img src="../image/img2.jpg" alt="Memory 2">
+                <div class="hidden-message">I Love You, Ammu! 💕</div>
+            </div>
+            <div class="image-container">
+                <img src="../image/img3.jpg" alt="Memory 3">
+                <div class="hidden-message">Our Special Day ✨</div>
+            </div>
+            <div class="image-container">
+                <img src="../image/img4.jpg" alt="Memory 4">
+                <div class="hidden-message">My Heart Belongs to You 💖</div>
+            </div>
+            <div class="image-container">
+                <img src="../image/img5.jpg" alt="Memory 5">
+                <div class="hidden-message">A Love Story Forever 📖❤️</div>
+            </div>
+            <div class="image-container">
+                <img src="../image/img6.jpg" alt="Memory 6">
+                <div class="hidden-message">You're My Everything 😘</div>
+            </div>
+            <div class="image-container">
+                <img src="../image/img7.jpg" alt="Memory 7">
+                <div class="hidden-message">Endless Love 💞</div>
+            </div>
+            <div class="image-container">
+                <img src="../image/img8.jpg" alt="Memory 8">
+                <div class="hidden-message">Best Moments Together 🌟</div>
+            </div>
+            <div class="image-container">
+                <img src="../image/img9.jpg" alt="Memory 9">
+                <div class="hidden-message">Every Moment is Precious 💓</div>
+            </div>
+            <div class="image-container">
+                <img src="../image/img10.jpg" alt="Memory 10">
+                <div class="hidden-message">Our Love is Eternal 🔥</div>
+            </div>
         </div>
-        
     </div>
     <a href="../main.html" class="back-button">← Back to Home</a>
-
+    <div id="lightbox">
+        <span class="close">&times;</span>
+        <img id="lightbox-img" src="">
+        <div class="prev">&#10094;</div>
+        <div class="next">&#10095;</div>
+    </div>    
 </body>
 </html>

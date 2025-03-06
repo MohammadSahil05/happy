@@ -4,8 +4,10 @@ body {
     text-align: center;
     margin: 0;
     padding: 40px;
+    cursor: url('heart-cursor.png'), auto;
 }
 
+/* 🔥 Beautiful White Container with Shadow */
 .container {
     background: #fff;
     padding: 30px;
@@ -13,46 +15,173 @@ body {
     box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
     max-width: 900px;
     margin: auto;
+    transition: transform 0.3s ease-in-out;
 }
 
+/* 💖 Title Styling */
 h1 {
     color: #b22222;
     font-size: 36px;
     margin-bottom: 20px;
+    text-shadow: 2px 2px 10px rgba(255, 0, 0, 0.3);
 }
 
+/* 📸 Gallery Grid */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
     justify-content: center;
 }
 
+/* ✨ Image Wrapper */
+.image-container {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    perspective: 1000px;
+}
+
+/* ✨ Image Styling & Reflection Effect */
 .gallery img {
     width: 100%;
     border-radius: 15px;
     border: 5px solid #b22222;
     box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, filter 0.3s ease-in-out;
+    cursor: pointer;
+    position: relative;
+    display: block;
 }
 
-.gallery img:hover {
-    transform: scale(1.05);
+/* 🔥 Message Container (Initially Hidden) */
+.message {
+    position: absolute;
+    bottom: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 16px;
+    width: 90%;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, bottom 0.5s ease-in-out;
+    backdrop-filter: blur(10px);
+    font-family: 'Dancing Script', cursive;
 }
 
+/* 🔥 On Hover/Touch: Zoom, Tilt & Show Message */
+.image-container:hover img, .image-container:active img {
+    transform: scale(1.1) rotateY(5deg);
+    box-shadow: 0px 0px 20px rgba(255, 0, 0, 0.6);
+    filter: brightness(1.2);
+}
+.image-container:hover .message, .image-container:active .message {
+    bottom: 10px;
+    opacity: 1;
+}
 
+/* 💓 Heartbeat Animation */
+.image-container:hover img {
+    animation: heartbeat 1s infinite alternate;
+}
+@keyframes heartbeat {
+    from { transform: scale(1.05); }
+    to { transform: scale(1.1); }
+}
+
+/* 🎬 Fullscreen Effect */
+#fullscreen-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#fullscreen-img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    animation: zoomIn 0.3s ease-in-out;
+}
+
+/* 🔥 Smooth Zoom Animation */
+@keyframes zoomIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* ⏪ Back Button */
 .back-button {
     display: inline-block;
     margin-top: 20px;
-    padding: 10px 20px;
+    padding: 12px 25px;
     background: #b22222;
     color: white;
     text-decoration: none;
     font-weight: bold;
     border-radius: 8px;
     transition: 0.3s;
+    font-size: 18px;
+    box-shadow: 3px 3px 10px rgba(255, 0, 0, 0.3);
 }
 
+/* 🔥 Button Hover */
 .back-button:hover {
     background: #ff4d4d;
+    transform: scale(1.1);
+    box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.6);
+}
+
+/* 🔄 Navigation Arrows */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+
+/* 🖱️ Custom Love Cursor */
+.custom-cursor {
+    cursor: url('love-cursor.png'), auto;
+}
+
+/* 🌟 Sparkle Animation on Hover */
+@keyframes sparkle {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+.image-container:hover img {
+    animation: sparkle 0.6s infinite;
+}
+/* Subtle Pop-Up Effect on Touch */
+.image-container img {
+    transition: transform 0.2s ease-in-out;
+}
+
+.image-container:active img, 
+.image-container:hover img {
+    transform: scale(1.05); /* Slight zoom effect */
 }
